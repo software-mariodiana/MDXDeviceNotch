@@ -23,6 +23,8 @@
 #import "MDXDeviceNotch.h"
 #import <UIKit/UIKit.h>
 
+#pragma mark - Private implementation
+
 typedef NS_ENUM(NSInteger, MDXDeviceNotchState) {
     MDXDeviceNotchStateUndetermined = -1,
     MDXDeviceNotchStateFalse = 0,
