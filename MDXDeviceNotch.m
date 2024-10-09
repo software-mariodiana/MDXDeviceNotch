@@ -98,7 +98,7 @@ typedef NS_ENUM(NSInteger, MDXDeviceNotchState) {
     // This never changes, so we need do it only once if we're successful.
     if ([self deviceState] == MDXDeviceNotchStateUndetermined) {
         // iPads do not have a device notch.
-        if ((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)) {
+        if (([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)) {
             self.deviceState = MDXDeviceNotchStateFalse;
             return MDXDeviceNotchStateFalse;
         }
