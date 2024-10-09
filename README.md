@@ -5,7 +5,7 @@ MDXDeviceNotch is a lightweight Objective-C utility designed to help iOS develop
 ## Features
 
 - **Detect device notch**: Determine if the current iOS device has a notch.
-- **Simple API**: Easily check for a notch or a Home Button with a single function.
+- **Simple API**: Easily check for a notch with a single function.
 - **Lightweight**: The utility is minimal and focused, designed to integrate seamlessly into any iOS project.
 
 ## Installation
