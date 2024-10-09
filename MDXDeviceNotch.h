@@ -58,18 +58,3 @@
  * @return YES if the current iOS device has a notch, NO otherwise.
  */
 BOOL MDXHasDeviceNotch(void);
-
-
-/**
- * Return YES if iOS device has a Home Button; NO, if it does not.
- *
- * This function determines whether the current iOS device has a physical Home Button.
- * It relies on the same mechanism as the MDXHasDeviceNotch function to inspect the
- * key window's safe area insets, and therefore has the same lifecycle constraints.
- *
- * Please refer to the documentation for `MDXHasDeviceNotch()` for details about
- * when to safely call this function to ensure meaningful results.
- *
- * @return YES if the current iOS device has a Home Button, NO otherwise.
- */
-BOOL MDXHasHomeButton(void);

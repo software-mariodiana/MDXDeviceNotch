@@ -97,6 +97,12 @@ typedef NS_ENUM(NSInteger, MDXDeviceNotchState) {
 {
     // This never changes, so we need do it only once if we're successful.
     if ([self deviceState] == MDXDeviceNotchStateUndetermined) {
+        // iPads do not have a device notch.
+        if ((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)) {
+            self.deviceState = MDXDeviceNotchStateFalse;
+            return MDXDeviceNotchStateFalse;
+        }
+        
         UIWindow* window = [self keyWindow];
         
         if (!window) {
@@ -112,7 +118,7 @@ typedef NS_ENUM(NSInteger, MDXDeviceNotchState) {
         }
         
         self.deviceState =
-            [window safeAreaInsets].bottom > 0.0 ? MDXDeviceNotchStateTrue : MDXDeviceNotchStateFalse;
+        [window safeAreaInsets].bottom > 0.0 ? MDXDeviceNotchStateTrue : MDXDeviceNotchStateFalse;
     }
     
     return [self deviceState] == MDXDeviceNotchStateTrue;
@@ -120,15 +126,9 @@ typedef NS_ENUM(NSInteger, MDXDeviceNotchState) {
 
 @end
 
-#pragma mark - Public functions
+#pragma mark - Public function
 
 BOOL MDXHasDeviceNotch(void)
 {
     return [[MDXDeviceNotch sharedInstance] hasDeviceNotch];
-}
-
-
-BOOL MDXHasHomeButton(void)
-{
-    return !MDXHasDeviceNotch();
 }
