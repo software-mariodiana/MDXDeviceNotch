@@ -118,7 +118,7 @@ typedef NS_ENUM(NSInteger, MDXDeviceNotchState) {
         }
         
         self.deviceState =
-        [window safeAreaInsets].bottom > 0.0 ? MDXDeviceNotchStateTrue : MDXDeviceNotchStateFalse;
+            [window safeAreaInsets].bottom > 0.0 ? MDXDeviceNotchStateTrue : MDXDeviceNotchStateFalse;
     }
     
     return [self deviceState] == MDXDeviceNotchStateTrue;
