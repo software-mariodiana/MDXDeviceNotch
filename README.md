@@ -1,12 +1,11 @@
 # MDXDeviceNotch
 
-MDXDeviceNotch is a lightweight Objective-C utility designed to help iOS developers determine whether the current device has a **notch** (e.g., on iPhone X models and later) or a **physical Home Button** (e.g., on iPhone 8 and earlier). The project includes two convenience functions that allow you to easily detect these characteristics in your app, ensuring proper UI layout adjustments depending on the device.
+MDXDeviceNotch is a lightweight Objective-C utility designed to help iOS developers determine whether the current device has a **notch** (e.g., on iPhone X models and later). The project includes a convenience function that allows you to easily detect the presence of a notch in your app, ensuring proper UI layout adjustments depending on the device.
 
 ## Features
 
 - **Detect device notch**: Determine if the current iOS device has a notch.
-- **Detect Home Button**: Check if the current iOS device has a physical Home Button.
-- **Simple API**: Easily check for either a notch or a Home Button with two functions.
+- **Simple API**: Easily check for a notch or a Home Button with a single function.
 - **Lightweight**: The utility is minimal and focused, designed to integrate seamlessly into any iOS project.
 
 ## Installation
@@ -46,28 +45,13 @@ else {
 }
 ```
 
-### Detect if a device has a Home Button
-
-Use the `MDXHasHomeButton()` function to check if the device has a physical Home Button.
-
-#### Example:
-
-```objc
-if (MDXHasHomeButton()) {
-    NSLog(@"This device has a Home Button.");
-} 
-else {
-    NSLog(@"This device does not have a Home Button.");
-}
-```
-
 ## Important Notes
 
-Both `MDXHasDeviceNotch()` and `MDXHasHomeButton()` rely on the application's **key window** being available to inspect its safe area insets. Therefore, **these functions should not be called too early in the app's lifecycle** (e.g., before the root view controller's view has been laid out). If called too early, they will log a warning and may not return meaningful results.
+Both `MDXHasDeviceNotch()` relies on the application's **key window** being available to inspect its safe area insets. Therefore, **the function should not be called too early in the app's lifecycle** (e.g., before the root view controller's view has been laid out). If called too early, it will log a warning and may not return meaningful results.
 
 ### Initialization Recommendation
 
-To ensure the functions are called at the appropriate time, it is recommended to initialize them in your root view controller’s `viewWillLayoutSubviews` method:
+To ensure the function is called at the appropriate time, it is recommended to initialize it in your root view controller’s `viewWillLayoutSubviews` method:
 
 ```objc
 - (void)viewWillLayoutSubviews
@@ -79,7 +63,7 @@ To ensure the functions are called at the appropriate time, it is recommended to
 }
 ```
 
-This guarantees that the functions are only initialized once after the key window has been mounted, and their results will always be correct thereafter.
+This guarantees that the function is only initialized once after the key window has been mounted, and its results will always be correct thereafter.
 
 ## License
 
