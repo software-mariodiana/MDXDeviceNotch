@@ -40,7 +40,8 @@ Use the `MDXHasDeviceNotch()` function to determine if the current device has a 
 ```objc
 if (MDXHasDeviceNotch()) {
     NSLog(@"This device has a notch.");
-} else {
+} 
+else {
     NSLog(@"This device does not have a notch.");
 }
 ```
@@ -54,7 +55,8 @@ Use the `MDXHasHomeButton()` function to check if the device has a physical Home
 ```objc
 if (MDXHasHomeButton()) {
     NSLog(@"This device has a Home Button.");
-} else {
+} 
+else {
     NSLog(@"This device does not have a Home Button.");
 }
 ```
