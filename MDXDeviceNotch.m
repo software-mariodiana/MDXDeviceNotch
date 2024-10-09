@@ -18,6 +18,8 @@
 // OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 //
 
+// https://github.com/software-mariodiana/MDXDeviceNotch
+
 #import "MDXDeviceNotch.h"
 #import <UIKit/UIKit.h>
 
