@@ -64,7 +64,7 @@ BOOL MDXHasDeviceNotch(void)
 UIWindow* MDXKeyWindow(void)
 {
     UIWindow* keyWindow = nil;
-    
+
     for (id aScene in [[UIApplication sharedApplication] connectedScenes]) {
         UIWindow* window = [[aScene delegate] window];
         
@@ -73,10 +73,10 @@ UIWindow* MDXKeyWindow(void)
             break;
         }
     }
-    
+
     if (!keyWindow) {
         NSLog(@"WARNING (MDXDeviceNotch): Unable to determine key window!");
     }
-    
+
     return keyWindow;
 }
