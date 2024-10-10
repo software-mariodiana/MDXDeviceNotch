@@ -54,7 +54,6 @@ BOOL MDXHasDeviceNotch(void)
             return NO;
         }
         
-        NSLog(@"## Bottom inset: %f", [window safeAreaInsets].bottom);
         MDXDeviceNotchValue =
             [window safeAreaInsets].bottom > 0.0 ? MDXDeviceNotchStateTrue : MDXDeviceNotchStateFalse;
     }
