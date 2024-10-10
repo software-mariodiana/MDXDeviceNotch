@@ -64,12 +64,11 @@ BOOL MDXHasDeviceNotch(void)
 
 UIWindow* MDXKeyWindow(void)
 {
-    NSArray* scenes = [[[UIApplication sharedApplication] connectedScenes] allObjects];
-    
     UIWindow* keyWindow = nil;
     
-    for (id aScene in scenes) {
+    for (id aScene in [[UIApplication sharedApplication] connectedScenes]) {
         UIWindow* window = [[aScene delegate] window];
+        
         if ([window isKeyWindow]) {
             keyWindow = window;
             break;
