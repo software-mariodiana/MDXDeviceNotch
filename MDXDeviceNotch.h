@@ -20,7 +20,7 @@
 
 // https://github.com/software-mariodiana/MDXDeviceNotch
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 /**
  * Return YES if iOS device has a notch; NO, if it does not.
@@ -58,3 +58,27 @@
  * @return YES if the current iOS device has a notch, NO otherwise.
  */
 BOOL MDXHasDeviceNotch(void);
+
+/**
+ * Return the current key window of the application, or nil if the key window
+ * cannot be determined.
+ *
+ * This function retrieves the application's key window by checking all
+ * connected scenes in the current application. It is particularly useful in
+ * scenarios where iOS's multi-scene environment (introduced in iOS 13) makes
+ * determining the active window more complicated than in earlier versions of
+ * iOS.
+ *
+ * IMPORTANT: This function relies on the application's key window being fully
+ * initialized. If the function is called too early in the application
+ * lifecycle (before the window has been mounted), it may return nil. Therefore,
+ * it is recommended to call this function after the root view controller has
+ * been laid out (e.g., inside `viewDidAppear` or `viewWillLayoutSubviews`).
+ *
+ * If the key window cannot be determined, a warning will be logged, and the
+ * function will return nil. This is especially useful for debugging in complex
+ * view hierarchies or multi-scene applications.
+ *
+ * @return The current key window, or nil if no key window can be found.
+ */
+UIWindow* MDXKeyWindow(void);
